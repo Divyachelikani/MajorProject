@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <script src="modules/jquery/jquery.min.js"></script>
+    <script src="modules/jquery/jquery-ui.min.js"></script>
+    <script src="modules/moment/moment.min.js"></script>
+    <script src="modules/full_calendar/fullcalendar.min.js"></script>
+    <link href="modules/full_calendar/fullcalendar.min.css" rel="stylesheet" />
+    <link href="modules/full_calendar/fullcalendar.print.css" media="print" />
+    <script src="javascripts/index.js"></script>
+    <link href="styles/index.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Calendar container -->
+    <div class="calendar-container">
+      <!-- Small Calendar -->
+      <div class="right-container">
+        <div id="smallCalendar"></div>
+
+        <!-- Draggable Events -->
+        <div id="external-events">
+          <p>
+            <strong>Draggable Events</strong>
+          </p>
+          <div class="fc-event">Meeting With Professor</div>
+          <div class="fc-event">Team Meeting</div>
+          <div class="fc-event">Project Meeting</div>
+          <div class="fc-event">FYP Presentation</div>
+          <p>
+            <input type="checkbox" id="drop-remove" />
+            <label for="drop-remove">Remove After Drop</label>
+          </p>
+        </div>
+      </div>
+
+      <!-- Main Calendar -->
+      <div class="calendar">
+        <div class="header"></div>
+        <div id="calendar">
+          <!-- Calendar events will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <div id="eventPreviewModal">
+      <div id="filePreviewContent">
+        <h3 id="fileTitle"></h3>
+        <p id="fileContent"></p>
+        <button id="closePreviewModalButton" class="modalButton">Close</button>
+        <button id="deletePreviewModalButton" class="modalButton">Delete</button>
+        <button id="editPreviewModalButton" class="modalButton">Edit Event</button>
+      </div>
+    </div>
+
+    <div id="addEditEventModal">
+      <div id="addEditEventContent">
+        <h3 id="addEditEventTitle"></h3>
+        <label for="eventTitle">Title:</label>
+        <input type="text" id="eventTitle" required />
+        <br />
+        <label for="eventDescription">Description:</label>
+        <textarea id="eventDescription" rows="4"></textarea>
+        <br />
+        <label for="eventStart">Start:</label>
+        <input type="datetime-local" id="eventStart" value="" required />
+        <br />
+        <label for="eventEnd">End:</label>
+        <input type="datetime-local" id="eventEnd" value="" required />
+        <br />
+        <div id="dayCheckboxes">
+          <input type="checkbox" id="sunday" value="1">
+          <label for="sunday">Sunday</label><br>
+          <input type="checkbox" id="monday" value="2">
+          <label for="monday">Monday</label><br>
+          <input type="checkbox" id="tuesday" value="3">
+          <label for="tuesday">Tuesday</label><br>
+          <input type="checkbox" id="wednesday" value="4">
+          <label for="wednesday">Wednesday</label><br>
+          <input type="checkbox" id="thursday" value="5">
+          <label for="thursday">Thursday</label><br>
+          <input type="checkbox" id="friday" value="6">
+          <label for="friday">Friday</label><br>
+          <input type="checkbox" id="saturday" value="7">
+          <label for="saturday">Saturday</label><br>
+        </div>
+        <br />
+    
+        <button id="saveEventModalButton" class="modalButton">Save Event</button>
+        <button id="closeEventModalButton" class="modalButton">Close</button>
+        <button id="deleteEventModalButton" class="modalButton">Delete</button>
+        <button id="generateEvents">Generate Events</button>
+
+      </div>
+    </div>
+          </div>
+  
+      </div>
+    </div>
+
+    
+  </body>
+</html>
